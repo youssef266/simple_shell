@@ -15,4 +15,6 @@ int interactive(char **argv, char **env);
 int non_interactive(int argc, char**);
 int _strtok(char **tok, char *line, char *delim);
 void signint(void);
+int _strlen(char *s);
+void handling_error(char *process, int exit_status, char *command);
 #endif
