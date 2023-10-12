@@ -8,7 +8,7 @@
 */
 int main(int argc, char **argv, char **env)
 {
-signal(SIGINT, sigint);
+signal(SIGINT, signint);
 if (argc == 1)
 interactive(argv, env);
 return (0);
