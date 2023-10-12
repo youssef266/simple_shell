@@ -18,4 +18,5 @@ int _strtok(char **tok, char *line, char *delim);
 void signint(int sig);
 size_t _strlen(char *s);
 void handling_error(char *process, char *command);
+int _putchar(char c);
 #endif
