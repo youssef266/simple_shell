@@ -17,6 +17,6 @@ int non_interactive(int argc, char**);
 int _strtok(char **tok, char *line, char *delim);
 void signint(int sig);
 size_t _strlen(char *s);
-void handling_error(char *process, char *command);
+void handle_error(char *process, char *command, char *error_type);
 int _putchar(char c);
 #endif
