@@ -11,8 +11,11 @@ int interactive(char **argv, char **env)
 {
 char *command, *tok[10];
 size_t line_len = 0;
-int n_read = 1, status, exit_stat;
+int n_read = 1, status, exit_stat = 0;
 pid_t child;
+
+(void)argv; /* set argv to void */
+
 while (1)
 {
 if (isatty(STDIN_FILENO) != 0)
@@ -24,7 +27,7 @@ if(isatty(STDIN_FILENO) != 0)
 write(STDOUT_FILENO, "\n", 1);
 if (command != NULL)
 free(command);
-exit(0);
+exit(exit_stat);
 }
 }
 _strtok(tok, command, "\n");
@@ -47,4 +50,5 @@ exit_stat = WEXITSTATUS(status);
 kill(child, SIGKILL);
 }
 }
+
 
