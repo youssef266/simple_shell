@@ -27,7 +27,7 @@ write(STDERR_FILENO, "not found\n", 11);
   *
   * Return: voide.
   */
-void cannot(char *process, char *command)
+void cannot_open(char *process, char *command)
 {
 size_t lenth1, lenth2;
 lenth1 = _strlen(process);
