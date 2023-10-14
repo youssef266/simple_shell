@@ -33,6 +33,10 @@ exit(exit_stat);
 _strtok(tok, command, "\n");
 if (tok[0] == NULL)
 continue;
+ if (_strcmp(tok[0], "exit") == 0) {
+            exit_stat = exit_builtin();
+            continue;
+        }
 child = fork();
 if (child == -1)
 {
