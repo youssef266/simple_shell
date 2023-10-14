@@ -8,6 +8,5 @@
 void signint(int sig)
 {
     (void) sig;
-
 write(STDIN_FILENO, "\n($)", 5);
 }
