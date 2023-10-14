@@ -15,6 +15,8 @@ ssize_t n_read = 1;
 int status, exit_stat = 0;
 pid_t child;
 
+
+
 while (1)
 {
 if (isatty(STDIN_FILENO) != 0)
@@ -33,6 +35,10 @@ if (tok[0] == NULL)
 continue;
  if (_strcmp(tok[0], "exit") == 0) {
             exit_stat = exit_builtin();
+            continue;
+        }
+        if (strcmp(tok[0], "env") == 0) {
+            list_environment_variables();
             continue;
         }
 child = fork();
@@ -56,5 +62,6 @@ exit_stat = WEXITSTATUS(status);
 kill(child, SIGKILL);
 }
 }
+
 }
 

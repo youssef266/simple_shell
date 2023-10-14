@@ -21,4 +21,5 @@ void notfound(char *process, char *command);
 void cannot_open(char *process, char *command);
 int exit_builtin(void);
 int _strcmp(char *s1, char *s2);
+void list_environment_variables(void);
 #endif
