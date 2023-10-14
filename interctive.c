@@ -44,6 +44,7 @@ exit(15);
 if (child == 0)
 {
 execve(tok[0], tok, env);
+notfound(argv[0], tok[0]);
 exit(25);
 }
 else
