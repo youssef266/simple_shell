@@ -15,8 +15,6 @@ ssize_t n_read = 1;
 int status, exit_stat = 0;
 pid_t child;
 
-(void)argv; /* set argv to void */
-
 while (1)
 {
 if (isatty(STDIN_FILENO) != 0)
