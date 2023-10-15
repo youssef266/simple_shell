@@ -1,9 +1,9 @@
 #include "shell.h"
 /**
- * _strtok: parse string to sequence of tokens
- * tok: pointer to array of strings
- * line: the command
- * delim: the delimiter
+ * _strtok - parse string to sequence of tokens
+ * @tok: pointer to array of strings
+ * @line: the command
+ * @delim: the delimiter
  * Return: number of tokens
 */
 
