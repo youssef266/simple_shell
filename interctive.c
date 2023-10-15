@@ -1,18 +1,19 @@
 #include "shell.h"
+
 /**
- * interactive - is function that handle the interactive mode
- *
- * @argv: a pointer to pointer that handel the value
- * @env: pointer
- * Return: void
+ * interactive: handle interactie mode
+ * @argc: argument counter
+ * @argv: argument vector
+ * @environmental variable
+ * Return: 0 on success
 */
 int interactive(char **argv, char **env)
 {
-    char *command = NULL, *tok[10];
-    size_t line_len = 0;
-    ssize_t n_read = 1;
-    int status, exit_stat = 0;
-    pid_t child;
+char *command = NULL, *tok[10];
+size_t line_len = 0;
+ssize_t n_read = 1;
+int status, exit_stat = 0;
+pid_t child;
 
 
 
@@ -29,6 +30,7 @@ if (command != NULL)
 free(command);
 exit(exit_stat);
 }
+command = handle_spaces(command);
 _strtok(tok, command, "\n");
 if (tok[0] == NULL)
 continue;
@@ -61,5 +63,6 @@ exit_stat = WEXITSTATUS(status);
 kill(child, SIGKILL);
 }
 }
+
 }
 
