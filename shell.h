@@ -23,7 +23,7 @@ char *var;
 int len;
 struct list *next;
 }list_t;
-int interactive(char **argv, char **env);
+int interactive(char **argv, char **env, list_t *head_path);
 int non_interactive(int argc, char**);
 int _strtok(char **tok, char *line, char *delim);
 void signint(int sig);

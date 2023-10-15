@@ -7,14 +7,14 @@
  * @environmental variable
  * Return: 0 on success
 */
-int interactive(char **argv, char **env)
+int interactive(char **argv, char **env, list_t *head_path)
 {
     char *command = NULL, *tok[10];
     size_t line_len = 0;
     ssize_t n_read = 1;
     int status, exit_stat = 0;
     pid_t child;
-
+(void) head_path;
 
 
 while (1)
