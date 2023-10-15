@@ -52,7 +52,6 @@ if (stat(tok_by_word[0], &stats) != 0)
 {
 exist = -1;
 temp = head_path;
-write(STDIN_FILENO, tok_by_word[0], _strlen(tok_by_word[0]));
 while (temp != NULL)
 {
 exist = check_for_path(&tok_by_word[0], temp->var);
