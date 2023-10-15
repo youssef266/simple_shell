@@ -39,7 +39,7 @@ continue;
             exit_stat = exit_builtin();
             continue;
         }
-        if (strcmp(tok[0], "env") == 0) {
+        if (_strcmp(tok[0], "env") == 0) {
             list_environment_variables();
             continue;
         }
