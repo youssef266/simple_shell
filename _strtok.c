@@ -9,16 +9,16 @@
 
 int _strtok(char **tok, char *line, char *delim)
 {
-char *token;
-int len = 1, i = 1;
-token = strtok(line, delim);
-tok[0] = token;
-while (token != NULL)
+char *tmp, *str;
+int i = 0;
+for (str = line; ; str = NULL)
 {
-token = strtok(NULL, delim);
-tok[i] = token;
-i++, len++;
+tmp = strtok(str, delim);
+tok[i] = tmp;
+if (tmp == NULL)
+break;
+i++;
 }
-return (len);
+return (i);
 }
 

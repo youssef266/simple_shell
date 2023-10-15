@@ -9,11 +9,11 @@
 */
 int interactive(char **argv, char **env)
 {
-char *command = NULL, *tok[10];
-size_t line_len = 0;
-ssize_t n_read = 1;
-int status, exit_stat = 0;
-pid_t child;
+    char *command = NULL, *tok[10];
+    size_t line_len = 0;
+    ssize_t n_read = 1;
+    int status, exit_stat = 0;
+    pid_t child;
 
 
 
@@ -21,6 +21,7 @@ while (1)
 {
 if (isatty(STDIN_FILENO) != 0)
 write(STDOUT_FILENO,"($) ", 4);
+signal(SIGINT, signint);
 n_read = getline(&command, &line_len, stdin);
 if (n_read == -1)
 {

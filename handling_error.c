@@ -9,8 +9,8 @@
 void notfound(char *process, char *command)
 {
 size_t lenth1, lenth2;
-lenth1 = _strlen(process);
-lenth2 = _strlen(command);
+lenth1 = _strlen_sizet(process);
+lenth2 = _strlen_sizet(command);
 write(STDERR_FILENO, process, lenth1);
 write(STDERR_FILENO, ": ", 2);
 write(STDERR_FILENO, "1", 1);
@@ -30,8 +30,8 @@ write(STDERR_FILENO, "not found\n", 11);
 void cannot_open(char *process, char *command)
 {
 size_t lenth1, lenth2;
-lenth1 = _strlen(process);
-lenth2 = _strlen(command);
+lenth1 = _strlen_sizet(process);
+lenth2 = _strlen_sizet(command);
 write(STDERR_FILENO, process, lenth1);
 write(STDERR_FILENO, ": ", 2);
 write(STDERR_FILENO, "2", 1);
