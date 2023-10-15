@@ -44,5 +44,8 @@ int _strlen(char *s);
 void free_list(list_t *head);
 list_t *env_linked_path(char **env);
 char *getpath(char **env);
+int check_for_path(char **command, char *path);
+char *_strdup(char *str);
+char *_strcat(char *dest, char *src);
 
 #endif
