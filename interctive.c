@@ -41,7 +41,6 @@ continue;
 _strtok(tok_by_word, tok[0], " ");
  if (_strcmp(tok_by_word[0], "exit") == 0) {           
 exit_stat = exit_builtin();
-continue;
 }
 if (_strcmp(tok_by_word[0], "env") == 0) {
 list_environment_variables();

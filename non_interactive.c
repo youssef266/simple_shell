@@ -29,11 +29,10 @@ exit(35);
 _strtok(tok_by_word, tok[0], " ");
  if (_strcmp(tok_by_word[0], "exit") == 0) {           
 exit_stat = exit_builtin();
-
 }
 if (_strcmp(tok_by_word[0], "env") == 0) {
 list_environment_variables();
-exit(0);
+exit(exit_stat);
 }
 exist = 0;
 if (stat(tok_by_word[0], &stats) != 0)
