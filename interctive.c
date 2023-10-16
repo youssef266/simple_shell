@@ -22,7 +22,7 @@ while (1)
 if (isatty(STDIN_FILENO) != 0)
 write(STDOUT_FILENO,"($) ", 4);
 signal(SIGINT, signint);
-n_read = getline(&command, &line_len, stdin);
+n_read = _getline(&command, &line_len, stdin);
 if (n_read == -1)
 {
 if(isatty(STDIN_FILENO) != 0)

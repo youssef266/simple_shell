@@ -47,5 +47,5 @@ char *getpath(char **env);
 int check_for_path(char **command, char *path);
 char *_strdup(char *str);
 char *_strcat(char *dest, char *src);
-
+ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
 #endif
