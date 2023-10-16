@@ -24,7 +24,7 @@ int len;
 struct list *next;
 }list_t;
 int interactive(char **argv, char **env, list_t *head_path);
-int non_interactive(int argc, char**);
+int non_interactive(int argc, char **argv, char **env, list_t *head_path);
 int _strtok(char **tok, char *line, char *delim);
 void signint(int sig);
 size_t _strlen_sizet(char *s);
