@@ -40,7 +40,7 @@ if (tok[0] == NULL)
 continue;
 _strtok(tok_by_word, tok[0], " ");
  if (_strcmp(tok_by_word[0], "exit") == 0) {           
-exit_stat = exit_builtin();
+exit_builtin(argv, tok_by_word);
 free(command);
 free_list(head_path);
 }

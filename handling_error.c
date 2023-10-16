@@ -40,3 +40,20 @@ write(STDERR_FILENO, command, lenth2);
 write(STDERR_FILENO, ": ", 2);
 write(STDERR_FILENO, "can't open\n", 12);
 }
+void illegal(char *process, char *command, char *num)
+{
+size_t lenth1, lenth2, length3;
+lenth1 = _strlen_sizet(process);
+lenth2 = _strlen_sizet(command);
+length3 = _strlen(num);
+write(STDERR_FILENO, process, lenth1);
+write(STDERR_FILENO, ": ", 2);
+write(STDERR_FILENO, "2", 1);
+write(STDERR_FILENO, ": ", 2);
+write(STDERR_FILENO, command, lenth2);
+write(STDERR_FILENO, ": ", 2);
+write(STDERR_FILENO, "Illegal number", 15);
+write(STDERR_FILENO, ": ", 2);
+write(STDERR_FILENO, num, length3);
+write(STDERR_FILENO, "\n", 2);
+}

@@ -28,7 +28,7 @@ if (tok[0] == NULL)
 exit(35);
 _strtok(tok_by_word, tok[0], " ");
  if (_strcmp(tok_by_word[0], "exit") == 0) {           
-exit_stat = exit_builtin();
+exit_builtin(argv, tok_by_word);
 }
 if (_strcmp(tok_by_word[0], "env") == 0) {
 list_environment_variables();

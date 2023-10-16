@@ -1,12 +1,23 @@
 #include "shell.h"
 /**
  * exit_builtin - Implement the exit built-in command.
- *
- * Return: 0 (indicating successful execution)
+ * tok: to take the status of exit
  */
-int exit_builtin(void)
+void exit_builtin(char **argv, char **tok)
 {
-    char message[] = "Exiting the shell.\n";
-    write(STDOUT_FILENO, message, sizeof(message) - 1);
-    exit(0);
+int exit_stat = 0;
+if (tok[1] == NULL)
+exit(0);
+if (_isdigit(tok[1]) == 0)
+{
+illegal(argv[0], tok[0], tok[1]);
+exit(2);
+}
+exit_stat = _atoi(tok[1]);
+if (exit_stat < 0)
+{
+illegal(argv[0], tok[0], tok[1]);
+exit(2);
+}
+exit(exit_stat);
 }
