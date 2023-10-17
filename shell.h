@@ -11,6 +11,7 @@
 #include <sys/wait.h>
 #include <string.h>
 #include <signal.h>
+extern char **environ;
 /**
  * struct list: linked list for envriomental variables
  * @var: the environmental variable
