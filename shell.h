@@ -13,7 +13,7 @@
 #include <signal.h>
 extern char **environ;
 /**
- * struct list: linked list for envriomental variables
+ * struct list - linked list for envriomental variables
  * @var: the environmental variable
  * @len: the length of the environmental variable
  * @next: pointer to next node
@@ -23,7 +23,7 @@ typedef struct list
 char *var;
 int len;
 struct list *next;
-}list_t;
+} list_t;
 int interactive(char **argv, char **env, list_t *head_path);
 int non_interactive(int argc, char **argv, char **env, list_t *head_path);
 int _strtok(char **tok, char *line, char *delim);
@@ -37,7 +37,7 @@ int _strcmp(char *s1, char *s2);
 void list_environment_variables(void);
 int _isspace(int c);
 char *handle_spaces(char *str);
-void list_environment_variables();
+void list_environment_variables(void);
 list_t *add_node(list_t **head, const char *str);
 list_t *add_node_end(list_t **head, const char *str);
 int _strlen(char *s);
