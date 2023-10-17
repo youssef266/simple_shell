@@ -1,31 +1,31 @@
 #include "shell.h"
-
+int interactive(char **argv, char **env, list_t *head_path);
 /**
- * interactive: handle interactie mode
- * @argc: argument counter
+ * interactive -  handle interactie mode
  * @argv: argument vector
- * @environmental variable
+ * @env: environmental variable
+ * @head_path: var for the head path
  * Return: 0 on success
 */
 int interactive(char **argv, char **env, list_t *head_path)
 {
-    char *command = NULL, *tok[10], *tok_by_word[10];
-    size_t line_len = 0;
-    ssize_t n_read = 1;
-    int status, exit_stat = 0, exist = 0;
-    pid_t child;
-    list_t *temp;
-    struct stat stats;
+	char *command = NULL, *tok[10], *tok_by_word[10];
+	size_t line_len = 0;
+	ssize_t n_read = 1;
+	int status, exit_stat = 0, exist = 0;
+	pid_t child;
+	list_t *temp;
+	struct stat stats;
 
 while (1)
 {
 if (isatty(STDIN_FILENO) != 0)
-write(STDOUT_FILENO,"($) ", 4);
+write(STDOUT_FILENO, "($) ", 4);
 signal(SIGINT, signint);
 n_read = getline(&command, &line_len, stdin);
 if (n_read == -1)
 {
-if(isatty(STDIN_FILENO) != 0)
+if (isatty(STDIN_FILENO) != 0)
 write(STDOUT_FILENO, "\n", 1);
 if (command != NULL)
 {
@@ -39,12 +39,14 @@ _strtok(tok, command, "\n");
 if (tok[0] == NULL)
 continue;
 _strtok(tok_by_word, tok[0], " ");
- if (_strcmp(tok_by_word[0], "exit") == 0) {           
+if (_strcmp(tok_by_word[0], "exit") == 0)
+{
 exit_builtin(argv, tok_by_word);
 free(command);
 free_list(head_path);
 }
-if (_strcmp(tok_by_word[0], "env") == 0) {
+if (_strcmp(tok_by_word[0], "env") == 0)
+{
 list_environment_variables();
 continue;
 }

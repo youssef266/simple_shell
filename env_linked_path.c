@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * linked_path - create a linked list of path to handle the path
+ * env_linked_path - create a linked list of path to handle the path
  * ex (ls instead of /bin/ls)
  * @env: environmental variables
  * Return: pointer to the linked list contain the path

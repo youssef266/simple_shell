@@ -1,7 +1,8 @@
 #include "shell.h"
 /**
  * exit_builtin - Implement the exit built-in command.
- * tok: to take the status of exit
+ * @tok: to take the status of exit
+ * @argv: the argument given value
  */
 void exit_builtin(char **argv, char **tok)
 {

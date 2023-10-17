@@ -1,20 +1,22 @@
 #include "shell.h"
-
+int non_interactive(int argc, char **argv, char **env, list_t *head_path);
 /**
- * non_interactive: handle non interactie mode
+ * non_interactive - handle non interactie mode
  * @argc: argument counter
  * @argv: argument vector
- * @environmental variable
+ * @env: environmental variable
+ * @head_path: pointer to the headpath
  * Return: 0 on success
 */
 int non_interactive(int argc, char **argv, char **env, list_t *head_path)
 {
-    char *command = NULL, *tok[10], *tok_by_word[10], *temp_2;
-    int status, exit_stat = 0, exist = 0, i = 0;
-    pid_t child;
-    list_t *temp;
-    struct stat stats;
-    (void) argc;
+	char *command = NULL, *tok[10], *tok_by_word[10], *temp_2;
+	int status, exit_stat = 0, exist = 0, i = 0;
+	pid_t child;
+	list_t *temp;
+	struct stat stats;
+	(void) argc;
+
 command = argv[1];
 for (i = 2; i < argc; i++)
 {
@@ -25,12 +27,14 @@ command = strdup(_strcat(temp_2, argv[i]));
 }
 _strtok(tok, command, "\n");
 if (tok[0] == NULL)
-exit(35);
+	exit(35);
 _strtok(tok_by_word, tok[0], " ");
- if (_strcmp(tok_by_word[0], "exit") == 0) {           
+if (_strcmp(tok_by_word[0], "exit") == 0)
+{
 exit_builtin(argv, tok_by_word);
 }
-if (_strcmp(tok_by_word[0], "env") == 0) {
+if (_strcmp(tok_by_word[0], "env") == 0)
+{
 list_environment_variables();
 exit(exit_stat);
 }
@@ -69,6 +73,6 @@ wait(&status);
 exit_stat = WEXITSTATUS(status);
 kill(child, SIGKILL);
 }
-return(1);
+return (1);
 }
 

@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
  * _isdigit - indicate if string is digit or not
- * @c: string to check
+ * @s: string to check
  * Return: 1 if s is digit and 0 otherwise
  */
 int _isdigit(char *s)

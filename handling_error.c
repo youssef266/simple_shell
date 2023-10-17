@@ -19,7 +19,7 @@ write(STDERR_FILENO, command, lenth2);
 write(STDERR_FILENO, ": ", 2);
 write(STDERR_FILENO, "not found\n", 11);
 }
-	
+
 /**
   * cannot_open - a function that handling the can not open error
   * @process: Name of the process is made.
@@ -40,6 +40,14 @@ write(STDERR_FILENO, command, lenth2);
 write(STDERR_FILENO, ": ", 2);
 write(STDERR_FILENO, "can't open\n", 12);
 }
+/**
+ * illegal - function that handle the exit
+ *
+ * @process: pointer to type char
+ * @command: the command used
+ * @num: number
+ *
+*/
 void illegal(char *process, char *command, char *num)
 {
 size_t lenth1, lenth2, length3;
