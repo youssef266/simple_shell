@@ -48,5 +48,6 @@ char *_strdup(char *str);
 char *_strcat(char *dest, char *src);
 int _atoi(char *s);
 int _isdigit(char *s);
+int _strncmp(char *s1, char *s2, int n);
 
 #endif
