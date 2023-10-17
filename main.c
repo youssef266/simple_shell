@@ -13,6 +13,5 @@ head_path = env_linked_path(env);
 if (argc == 1)
 interactive(argv, env, head_path);
 else
-non_interactive(argc, argv, env, head_path);
 return (0);
 }
