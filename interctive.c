@@ -75,9 +75,9 @@ exit(15);
 }
 if (child == 0)
 {
-execve(tok_by_word[0], tok_by_word, env);
+exit_stat = execve(tok_by_word[0], tok_by_word, env);
 notfound(argv[0], tok[0]);
-exit(25);
+exit(exit_stat);
 }
 else
 {

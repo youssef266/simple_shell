@@ -5,6 +5,7 @@
  * _strncmp - function that compares two strings.
  * @s1: the first string
  * @s2: the second string
+ * @n: number of characters to compare
  * Return: 0 if equal 1 if not
 */
 int _strncmp(char *s1, char *s2, int n)
